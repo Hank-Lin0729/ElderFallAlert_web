@@ -53,7 +53,7 @@
 ### 安裝步驟
 1. clone專案：
    ```
-   git clone <專案地址>
+   git clone https://github.com/Hank-Lin0729/ElderFallAlert_web.git
    ```
 2. 安裝相依庫：
    ```
