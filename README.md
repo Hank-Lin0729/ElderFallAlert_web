@@ -10,12 +10,13 @@
 - **templates/**: 網頁模板，包括用於顯示用戶頁面的 HTML 檔案。
 - **static/**: 靜態資源資料夾，用於儲存偵測後的圖片。
 
-### 技術棧
+### 技術
 - **後端框架**: Flask
 - **資料庫**: Render PostgreSQL
 - **偵測模型**: YOLO（v8 版本）
 - **硬體**: CPU i7 13700, GPU RTX 4070 12GB
 - **外部設備**: Arduino 燈條控制器
+- **Flutter**: Flutter 應用程式（[長者即時照護系統](https://github.com/Hank-Lin0729/ElderFallAlert_flutter_ios/blob/main/README.md))
 
 ## 功能描述
 1. **用戶註冊與登入**
