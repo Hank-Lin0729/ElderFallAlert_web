@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>視頻流</title>
+</head>
+<body>
+    {% if rtsp_link != 'none' %}
+        <!-- 如果 rtsp_link 有效，則顯示 iframe -->
+        <iframe src="{{ rtsp_link }}" width="600" height="400"></iframe>
+    {% else %}
+        <!-- 如果 rtsp_link 是 'none'，則顯示替代訊息 -->
+        <p>目前尚無 RTSP 連結可供顯示。</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,272 @@
+/* 一般樣式 */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.container-main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.container {
+    margin: 20px 0;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+
+/* 工具列 */
+
+.toolbar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+button.bg-gradient-primary {
+    background: linear-gradient(to right, #007bff, #0056b3);
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* 長者卡片 */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.elder-card {
+    background-color: #fff;
+    width: 250px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.elder-card p {
+    margin: 10px 0;
+}
+
+.elder-card p strong {
+    display: inline-block;
+    width: 120px;
+}
+
+
+/* 緊急事件卡片 */
+
+
+/* CSS 定義不同的顏色背景 */
+
+.green {
+    background-color: rgb(201, 248, 201);
+    border-left: 5px solid rgb(0, 150, 0);
+    /* 綠色邊框 */
+}
+
+.yellow {
+    background-color: rgb(255, 255, 198);
+    border-left: 5px solid rgb(255, 255, 0);
+    /* 黃色邊框 */
+}
+
+.red {
+    background-color: rgb(255, 182, 182);
+    border-left: 5px solid rgb(255, 0, 0);
+    /* 紅色邊框 */
+}
+
+.emergency-card {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.emergency-card p {
+    margin: 5px 0;
+}
+
+.emergency-card p strong {
+    display: inline-block;
+    width: 60px;
+}
+
+
+/* 增加滾動條並限制最大高度 */
+
+.scrollable-container {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+    /* 為了防止滾動條遮蓋內容 */
+}
+
+
+/* 可選：自定義滾動條樣式 */
+
+.scrollable-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    /* 自定義滾動條顏色 */
+    border-radius: 4px;
+}
+
+
+/* 模態框 */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* 表單樣式 */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+/* ESP32CAM 照片 */
+
+#esp32cam-photo {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* 響應式設計 */
+
+@media screen and (max-width: 600px) {
+    .toolbar {
+        flex-direction: column;
+    }
+    .elder-card {
+        width: 100%;
+    }
+    .modal-content {
+        width: 95%;
+    }
+}
+
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.esp32cam-photo {
+    width: 200px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}

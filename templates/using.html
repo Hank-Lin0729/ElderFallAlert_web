@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- <meta http-equiv="refresh" content="10">    -->
+    <title>使用者專屬頁面</title>
+    <link rel="stylesheet" href="../static/using.css">
+</head>
+
+<body>
+    <div class="container-main">
+        <h1>歡迎, {{ name }}!</h1>
+        <p>您的帳號是: {{ username }}</p>
+
+        <!-- 工具列 -->
+        <div class="toolbar">
+            <button id="reset-password-btn" class="button bg-gradient-primary">重設密碼</button>
+            <button id="reset-botkey-btn" class="button bg-gradient-primary">重設 Bot Key</button>
+            <button id="add-elder-btn" class="button bg-gradient-primary">新增長者</button>
+            <button class="button bg-gradient-primary"><a href="/logout">登出</a></button>
+        </div>
+
+        <!-- 長者資訊 -->
+        <div class="container">
+            <h2>長者資訊</h2>
+            <div id="elder-cards" class="card-container">
+                {% for elder in elders %}
+                <div class="elder-card">
+                    <p><strong>長者姓名:</strong> {{ elder[2] }}</p>
+                    <p><strong>常在區域編號:</strong> {{ elder[1] }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- 緊急事件 -->
+        <!-- 緊急事件 -->
+        <div class="container">
+            <h2>事件</h2>
+            <div id="emergency-container" class="scrollable-container">
+            </div>
+            <br>
+            <button id="clear-emergencies-btn" class="button bg-gradient-primary">清除所有緊急事件</button>
+        </div>
+
+
+
+
+
+        <!-- ESP32CAM 照片展示 -->
+        <div class="container">
+            <h2>ESP32CAM 照片</h2>
+            <div id="photo-container" class="photo-container"></div>
+            <!-- 容器會動態插入多張圖片 -->
+            <!-- 翻頁按鈕 -->
+            <button id="prev-page-btn" class="button bg-gradient-primary" onclick="loadPrevPage()" style="display:none;">上一頁</button>
+            <button id="next-page-btn" class="button bg-gradient-primary" onclick="loadNextPage()" style="display:none;">下一頁</button>
+        </div>
+
+
+        <!-- 密碼重設 Modal -->
+        <div id="reset-password-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-reset-password">&times;</span>
+                <h3>重設密碼</h3>
+                <form onsubmit="return handleResetPassword()">
+                    <div class="form-group">
+                        <label for="old-password">舊密碼</label>
+                        <input type="password" id="old-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">新密碼</label>
+                        <input type="password" id="new-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-new-password">重複新密碼</label>
+                        <input type="password" id="confirm-new-password" required>
+                    </div>
+                    <button type="submit">更新密碼</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Bot Key 重設 Modal -->
+        <div id="reset-botkey-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-reset-botkey">&times;</span>
+                <h3>重設 Bot Key</h3>
+                <form onsubmit="return handleResetBotkey()">
+                    <div class="form-group">
+                        <label for="new-botkey">新 Bot Key</label>
+                        <input type="text" id="new-botkey" required>
+                    </div>
+                    <button type="submit">更新 Bot Key</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 新增長者 Modal -->
+        <div id="add-elder-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-add-elder">&times;</span>
+                <h3>新增長者</h3>
+                <form onsubmit="return handleAddElder()">
+                    <div class="form-group">
+                        <label for="elder-name">長者姓名</label>
+                        <input type="text" id="elder-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="region-id">常在區域編號</label>
+                        <input type="text" id="region-id" required>
+                    </div>
+                    <button type="submit">新增長者</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../static/using.js"></script>
+</body>
+
+</html>
